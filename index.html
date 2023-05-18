@@ -56,17 +56,22 @@
       color: #666;
       font-size: 14px;
     }
+
+    #gif {
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>Do you wanna go on a date with the who made this shitty page in 5m ?</h2>
+    <h2>Do you wanna go on a date with the person who made this shitty page in 5m ?</h2>
     <label><input type="radio" name="option" value="yes" checked> Yes</label>
     <label><input type="radio" name="option" value="no" onclick="resetToYes()"> No</label>
     <label><input type="radio" name="option" value="maybe" onclick="resetToYes()"> Peut-être</label>
     <br>
     <button onclick="processOption()">Envoyer</button>
     <div id="result"></div>
+    <div id="gif"></div>
   </div>
 
   <script>
@@ -89,12 +94,15 @@
 
       if (selectedOption === "yes") {
         document.getElementById("result").innerText = "Bien... donnez le nom de l'endroit 😏";
+        document.getElementById("gif").innerHTML = '<img src="https://media.giphy.com/media/DffShiJ47fPqM/giphy.gif" alt="GIF">';
       } else {
+        setTimeout(function() {
+          document.querySelector('input[value="yes"]').checked = true; // Reset to "Yes" after 500ms
+        }, 500);
         document.getElementById("result").innerText = "";
+        document.getElementById("gif").innerHTML = "";
       }
 
       document.getElementById("result").style.display = "block";
     }
-  </script>
-</body>
-</html>
+  </script
