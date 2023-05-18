@@ -57,9 +57,18 @@
       font-size: 14px;
     }
 
-    #gif {
-      margin-top: 20px;
-      text-align: center;
+    #gif-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #gif-container img {
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
     }
   </style>
 </head>
@@ -72,7 +81,7 @@
     <br>
     <button onclick="processOption()">Envoyer</button>
     <div id="result"></div>
-    <div id="gif"></div>
+    <div id="gif-container"></div>
   </div>
 
   <script>
@@ -95,13 +104,13 @@
 
       if (selectedOption === "yes") {
         document.getElementById("result").innerText = "Bien... donnez le nom de l'endroit 😏";
-        document.getElementById("gif").innerHTML = '<img src="https://media.giphy.com/media/DffShiJ47fPqM/giphy.gif" alt="GIF" style="width: 300px;">';
+        document.getElementById("gif-container").innerHTML = '<img src="https://media.giphy.com/media/4KnLjTLUrs2sw/giphy.gif" alt="GIF">';
       } else {
         setTimeout(function() {
           document.querySelector('input[value="yes"]').checked = true; // Reset to "Yes" after 500ms
         }, 500);
         document.getElementById("result").innerText = "";
-        document.getElementById("gif").innerHTML = "";
+        document.getElementById("gif-container").innerHTML = "";
       }
 
       document.getElementById("result").style.display = "block";
