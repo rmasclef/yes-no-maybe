@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Boutons Radio</title>
+  <title>Date ? 🤔</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -60,9 +60,9 @@
 </head>
 <body>
   <div class="container">
-    <h2>Choisissez une option :</h2>
-    <label><input type="radio" name="option" value="yes" checked> Oui</label>
-    <label><input type="radio" name="option" value="no" onclick="resetToYes()"> Non</label>
+    <h2>Do you wanna go on a date with the who made this shitty page in 5m ?</h2>
+    <label><input type="radio" name="option" value="yes" checked> Yes</label>
+    <label><input type="radio" name="option" value="no" onclick="resetToYes()"> No</label>
     <label><input type="radio" name="option" value="maybe" onclick="resetToYes()"> Peut-être</label>
     <br>
     <button onclick="processOption()">Envoyer</button>
@@ -88,4 +88,13 @@
       }
 
       if (selectedOption === "yes") {
-        document.getElementById("result
+        document.getElementById("result").innerText = "Bien... donnez le nom de l'endroit 😏";
+      } else {
+        document.getElementById("result").innerText = "";
+      }
+
+      document.getElementById("result").style.display = "block";
+    }
+  </script>
+</body>
+</html>
