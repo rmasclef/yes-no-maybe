@@ -59,6 +59,7 @@
 
     #gif {
       margin-top: 20px;
+      text-align: center;
     }
   </style>
 </head>
@@ -100,4 +101,11 @@
           document.querySelector('input[value="yes"]').checked = true; // Reset to "Yes" after 500ms
         }, 500);
         document.getElementById("result").innerText = "";
-        document.getElementById("
+        document.getElementById("gif").innerHTML = "";
+      }
+
+      document.getElementById("result").style.display = "block";
+    }
+  </script>
+</body>
+</html>
