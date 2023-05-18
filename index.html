@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Date ? 🤔</title>
+  <title>Date 🤔</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -45,8 +45,8 @@
   </style>
 </head>
 <body>
-  <h2>Do you wanna date the one who made this shitty code ? </h2>
-  <label><input type="radio" name="option" value="yes"> Yes</label>
+  <h2>Choisissez une option :</h2>
+  <label><input type="radio" name="option" value="yes" checked> Yes</label>
   <label><input type="radio" name="option" value="no"> No</label>
   <label><input type="radio" name="option" value="maybe"> Maybe</label>
   <br>
@@ -66,12 +66,10 @@
       }
       
       if (selectedOption === "yes") {
-        document.getElementById("result").innerText = "Fine... name the place 😏 (PS : I'll bring my frient ChatGPT with me).";
+        document.getElementById("result").innerText = "Fine... name the place 😏";
       } else {
-        setTimeout(function() {
-          radios[0].checked = true; // Sélectionner "oui" après 500ms
-          document.getElementById("result").innerText = "";
-        }, 500);
+        radios[0].checked = true; // Reset to "Yes" immediately
+        document.getElementById("result").innerText = "";
       }
       
       document.getElementById("result").style.display = "block";
