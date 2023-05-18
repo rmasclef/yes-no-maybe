@@ -1,72 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Date ?</title>
-    <script src="script.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f1f1f1;
-            margin: 0;
-            padding: 20px;
-        }
+  <title>Date ? 🤔</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
 
-        h1 {
-            color: #333;
-            text-align: center;
-        }
+    h2 {
+      color: #333;
+    }
 
-        form {
-            max-width: 300px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
 
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
+    input[type="radio"] {
+      margin-right: 5px;
+    }
 
-        input[type="radio"] {
-            margin-right: 5px;
-        }
+    button {
+      padding: 8px 16px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
 
-        button {
-            display: block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
+    button:hover {
+      background-color: #45a049;
+    }
 
-        #result {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 18px;
-        }
-    </style>
+    #result {
+      display: none;
+      font-style: italic;
+      margin-top: 10px;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-    <h1>Do you wanna go on a date with the one who made this shitty site in 5m ?</h1>
-    <form id="myForm">
-        <label>
-            <input type="radio" name="choice" value="yes" checked> Oui
-        </label>
-        <label>
-            <input type="radio" name="choice" value="no" disabled> Non
-        </label>
-        <label>
-            <input type="radio" name="choice" value="maybe" disabled> Peut-être
-        </label>
-        <button type="button" onclick="submitForm()">Envoyer</button>
-    </form>
-    <div id="result"></div>
+  <h2>Do you wanna date the one who made this shitty code ? </h2>
+  <label><input type="radio" name="option" value="yes"> Yes</label>
+  <label><input type="radio" name="option" value="no"> No</label>
+  <label><input type="radio" name="option" value="maybe"> Maybe</label>
+  <br>
+  <button onclick="processOption()">Answer</button>
+  <div id="result"></div>
+
+  <script>
+    function processOption() {
+      var radios = document.getElementsByName("option");
+      var selectedOption = "";
+      
+      for (var i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+          selectedOption = radios[i].value;
+          break;
+        }
+      }
+      
+      if (selectedOption === "yes") {
+        document.getElementById("result").innerText = "Fine... name the place 😏 (PS : I'll bring my frient ChatGPT with me).";
+      } else {
+        setTimeout(function() {
+          radios[0].checked = true; // Sélectionner "oui" après 500ms
+          document.getElementById("result").innerText = "";
+        }, 500);
+      }
+      
+      document.getElementById("result").style.display = "block";
+    }
+  </script>
 </body>
 </html>
